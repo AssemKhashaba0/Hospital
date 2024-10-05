@@ -1,0 +1,51 @@
+﻿<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h1 class="text-center mb-4">Complete Appointment with @ViewBag.DoctorName</h1>
+            <form>
+                <div class="mb-3">
+                    <label for="patientName" class="form-label">Patient Name:</label>
+                    <input type="text" class="form-control" id="patientName" placeholder="Enter your name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="appointmentDate" class="form-label">Appointment Date:</label>
+                    <input type="date" class="form-control" id="appointmentDate" required>
+                </div>
+                <div class="mb-3">
+                    <label for="appointmentTime" class="form-label">Appointment Time:</label>
+                    <input type="time" class="form-control" id="appointmentTime" required>
+                </div>
+                <div class="d-grid">
+                    <!-- الزر الذي يفتح المودال -->
+                    <button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#confirmBookingModal">
+                        <i class="fas fa-calendar-check"></i> Complete Appointment
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- مودال تأكيد الحجز -->
+<div class="modal fade" id="confirmBookingModal" tabindex="-1" aria-labelledby="confirmBookingLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="confirmBookingLabel"><i class="fas fa-check-circle"></i> Confirm Appointment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p class="lead">Are you sure you want to complete this appointment with <strong>@ViewBag.DoctorName</strong>?</p>
+                <div class="d-flex justify-content-center">
+                    <i class="fas fa-user-md fa-3x text-primary"></i>
+                </div>
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <!-- يمكنك تعديل هذا الزر للقيام بالحجز النهائي -->
+                <button type="button" class="btn btn-success" data-bs-dismiss="modal"><i class="fas fa-check"></i> Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
